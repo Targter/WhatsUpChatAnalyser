@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import io
 import seaborn as sns
 from PIL import Image
-st.set_page_config(layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(layout="wide", initial_sidebar_state="expanded",page_title="Ab-ChatAnalysis",page_icon="download.png")
 st.sidebar.title("Chat Analyzer")
 
 import pandas as pd
@@ -15,6 +15,7 @@ import pandas as pd
 # Set the title of the app
 # Create a sidebar for file upload
 st.sidebar.title("Upload Section")
+
 with st.expander("Upload Section (for smaller screens)", expanded=False):
     uploaded_file = st.sidebar.file_uploader("Choose a file", type=['txt', 'csv', 'xlsx'])
 if uploaded_file is not None:
