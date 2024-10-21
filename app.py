@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import io
 import seaborn as sns
 from PIL import Image
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 st.sidebar.title("Chat Analyzer")
 
 import pandas as pd
@@ -15,7 +15,8 @@ import pandas as pd
 # Set the title of the app
 # Create a sidebar for file upload
 st.sidebar.title("Upload Section")
-uploaded_file = st.sidebar.file_uploader("Choose a file", type=['txt', 'csv', 'xlsx'])
+with st.expander("Upload Section (for smaller screens)", expanded=False):
+    uploaded_file = st.sidebar.file_uploader("Choose a file", type=['txt', 'csv', 'xlsx'])
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
     data = bytes_data.decode('utf-8')
@@ -160,3 +161,8 @@ if uploaded_file is not None:
             fig , ax = plt.subplots()
             ax.pie(emoji_df[1].head(),labels=emoji_df[0].head(),autopct="%0.2f")
             st.pyplot(fig)
+
+else:
+    st.header("Welcome to Abhay Chat Analysis App")
+    st.warning("please upload a file to proceed with the analytics")
+    st.info("Please upload the WhatsApp chat file without media (txt, csv, or xlsx) to analyze the chat data.")
