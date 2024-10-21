@@ -18,23 +18,17 @@ You can see the app in action [here]((https://abwork-chatanalyser.streamlit.app/
 To run this application locally, follow these steps:
 
 ### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/whatsapp-chat-analyzer.git
-cd whatsapp-chat-analyzer
-pip install -r requirements.txt
-streamlit run app.py
+bash
+- git clone https://github.com/your-username/whatsapp-chat-analyzer.git
+- cd whatsapp-chat-analyzer
+- pip install -r requirements.txt
+- streamlit run app.py
 ## 2. Install the Dependencies
 Ensure you have Python installed (preferably 3.8+). Then, install the required dependencies using:
 
 bash
 Copy code
-pip install -r requirements.txt
-## 3. Run the Application
-You can run the Streamlit app using the following command:
-
-bash
-Copy code
-streamlit run app.py
+##streamlit run app.py
 This will open the app in your browser on http://localhost:8501.
 
 ### Usage
